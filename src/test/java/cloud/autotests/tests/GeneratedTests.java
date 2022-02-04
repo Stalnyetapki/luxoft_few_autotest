@@ -21,7 +21,7 @@ public class GeneratedTests extends TestBase {
         });
 
         step("check banner", () -> {
-            $(".start-screen alt").shouldBe(visible);
+            $(".start-screen img").shouldBe(visible);
         });
     }
 
