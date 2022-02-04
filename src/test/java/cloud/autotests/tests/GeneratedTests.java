@@ -5,8 +5,8 @@ import io.qameta.allure.Description;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.title;
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -17,11 +17,11 @@ public class GeneratedTests extends TestBase {
     @DisplayName("Ikea banner should exist")
     void generatedTest() {
         step("open https://ikea.com", () -> {
-            step("// todo: just add selenium action");
+            open("https://ikea.com");
         });
 
         step("check banner", () -> {
-            step("// todo: just add selenium action");
+            $(".start-screen alt").shouldBe(visible);
         });
     }
 
