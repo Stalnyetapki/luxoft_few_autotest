@@ -5,24 +5,39 @@ import io.qameta.allure.Description;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
 
 
-public class GeneratedTests extends TestBase {
+public class MainPageTests extends TestBase {
     @Test
-    @Description("Soon to be implemented by you (or QA.GURU engineers)")
-    @DisplayName("Ikea banner should exist")
-    void generatedTest() {
-        step("open https://ikea.com", () -> {
-            open("https://ikea.com");
+    @Description("Test search work by site")
+    @DisplayName("Send request and check result of searching")
+    public void searchingTest(String request) {
+        step("open https://www.luxoft.com/", () -> {
+            open("https://www.luxoft.com/");
         });
 
-        step("check banner", () -> {
-            $(".start-screen img").shouldBe(visible);
+        step("Click on icon of seacrhing", () -> {
+            $(".icomoon-search").shouldBe(visible);
+            $(".icomoon-search").click();
         });
+
+        step("Send search request", () -> {
+            $("#query-search").setValue(request);
+            $("#test").click();
+        });
+        step("Send search request", () -> {
+            $("#query-search").setValue(request);
+            $("#test").click();
+        });
+        step("Response contains query string", () -> {
+            $(".search-results__items .search-results__item p").shouldHave(text(request));
+        });
+
     }
 
     @Test
