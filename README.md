@@ -122,6 +122,6 @@ test
 ## <img width="4%" title="Selenoid" src="images/icons/Selenoid.svg"> Пример запуска теста в Selenoid
 
 > К каждому тесту в отчете прилагается видео. Одно из таких видео представлено ниже.
-<p align="center">
+> 
 https://user-images.githubusercontent.com/24212728/165641869-fc5c9321-c22e-4ccc-9ca9-8d3b81becc70.mp4
-</p>
+
