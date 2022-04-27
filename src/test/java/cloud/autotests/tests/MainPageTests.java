@@ -13,10 +13,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 
 public class MainPageTests extends TestBase {
+
+
     @Test
     @Description("Test search work by site")
     @DisplayName("Send request and check result of searching")
-    public void searchingTest() {
+    void searchingTest() {
         step("open https://www.luxoft.com/", () -> {
             open("https://www.luxoft.com/");
         });
@@ -71,7 +73,7 @@ public class MainPageTests extends TestBase {
 
 
     @Test
-    @DisplayName("Open SideMenu")
+    @DisplayName("SideMenu have available to open")
     void sideMenuTest() {
         step("open https://www.luxoft.com/", () -> {
             open("https://www.luxoft.com/");
@@ -89,7 +91,7 @@ public class MainPageTests extends TestBase {
     @DisplayName("Page title should have header text")
     void titleTest() {
         step("Open url 'https://www.luxoft.com/'", () ->
-            open("https://www.luxoft.com/"));
+                open("https://www.luxoft.com/"));
 
         step("Page title should have text 'Luxoft | Digital Strategy, Consulting and Engineering at Scale'", () -> {
             String expectedTitle = "Luxoft | Digital Strategy, Consulting and Engineering at Scale";
@@ -103,7 +105,7 @@ public class MainPageTests extends TestBase {
     @DisplayName("Page console log should not have errors")
     void consoleShouldNotHaveErrorsTest() {
         step("Open url 'https://www.luxoft.com/'", () ->
-            open("https://www.luxoft.com/"));
+                open("https://www.luxoft.com/"));
 
         step("Console logs should not contain text 'SEVERE'", () -> {
             String consoleLogs = DriverUtils.getConsoleLogs();
