@@ -43,6 +43,45 @@ public class MainPageTests extends TestBase {
     @Test
     @DisplayName("Home page should have header links")
     void headerTest() {
+        step("open https://www.luxoft.com/", () -> {
+            open("https://www.luxoft.com/");
+        });
+
+        step("Check Services link in header", () -> {
+            $(".header__menu a[href='#services']").shouldHave(text("SERVICES"));
+        });
+
+        step("Check HomePage link in header", () -> {
+            $(".header__menu a[href='#home']").shouldHave(text("HOME"));
+        });
+
+        step("Check INDUSTRIES link in header", () -> {
+            $(".header__menu a[href='#industries']").shouldHave(text("INDUSTRIES"));
+        });
+
+        step("Check Careers link in header", () -> {
+            $(".header__menu a[href='#careers']").shouldHave(text("CAREERS"));
+        });
+
+        step("Check CONTACT US link in header", () -> {
+            $(".header__menu a[href='#contact-us']").shouldHave(text("CONTACT US"));
+        });
+
+    }
+
+
+    @Test
+    @DisplayName("Open SideMenu")
+    void sideMenuTest() {
+        step("open https://www.luxoft.com/", () -> {
+            open("https://www.luxoft.com/");
+        });
+
+        step("Open side menu", () -> {
+            $("#menu-switcher").click();
+            $(".lux-menu").shouldBe(visible);
+        });
+
 
     }
 
