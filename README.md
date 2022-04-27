@@ -123,5 +123,5 @@ test
 
 > К каждому тесту в отчете прилагается видео. Одно из таких видео представлено ниже.
 <p align="center">
-  <img title="Selenoid Video" src="images/gif/selenoid_video.gif">
+https://user-images.githubusercontent.com/24212728/165641869-fc5c9321-c22e-4ccc-9ca9-8d3b81becc70.mp4
 </p>
